@@ -1,4 +1,4 @@
-=== TH Partner Panel ===
+=== TH Partner Slider ===
 Contributors: triopsi
 Donate link: https://www.paypal.me/triopsi
 Tags: partner, ourpartner, panel, sidebar, site, post, shortcode, post, slideshow
@@ -13,7 +13,7 @@ A simple about our partner plugin. Create items and copy-paste the shortcode eve
  
 == Description ==
 
-The "TH Partner Panel" plugin is a very simple way, to show your partner on your site or blog post. It's have a responsive design
+The "TH Partner Slider" plugin is a very simple way, to show your partner on your site or blog post. It's have a responsive design
 and is very easys to use it. Create new partner items on the admin panel of wordpress an copy paste the shortcode your post or site. 
 Or use the TH Panel Widget for a slideshow.
 

@@ -1,14 +1,14 @@
 # Copyright (C) 2021 triopsi
-# This file is distributed under the same license as the TH Partner Panel plugin.
+# This file is distributed under the same license as the TH Partner Slider plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: TH Partner Panel 1.0.0\n"
+"Project-Id-Version: TH Partner Slider 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/th-partner-panel\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2021-02-04T12:57:56+01:00\n"
-"PO-Revision-Date: 2021-02-04 13:03+0100\n"
+"PO-Revision-Date: 2021-02-04 13:15+0100\n"
 "X-Generator: Poedit 2.3.1\n"
 "X-Domain: thpp\n"
 "Last-Translator: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Language: de_DE\n"
 
 #. Plugin Name of the plugin
-msgid "TH Partner Panel"
-msgstr "TH Partner Panel"
+msgid "TH Partner Slider"
+msgstr "TH Partner Slider"
 
 #. Plugin URI of the plugin
 msgid "https://www.wiki.profoxi.de"
@@ -25,7 +25,7 @@ msgstr "https://www.wiki.profoxi.de"
 
 #. Description of the plugin
 msgid "A simple our partner plugin. Create items and copy-paste the shortcode everywhere in your post or site."
-msgstr "Ein simpler WordPress Plugin zur Vorstellung der Partner. erstelle Items und füge den Shortcode in Seiten oder Posts."
+msgstr "Ein simpler WordPress Plugin zur Vorstellung der Partner. Erstelle Items und füge den Shortcode in Seiten oder Posts."
 
 #. Author of the plugin
 msgid "triopsi"
@@ -127,10 +127,6 @@ msgstr "Partnerskizze gespeichert."
 msgid "Partner name"
 msgstr "Partnernamen"
 
-#: inc/thpp-widget.php:31
-msgid "TH Partner Slider"
-msgstr "TH Partner Slider"
-
 #: inc/thpp-widget.php:34
-msgid "Widget for the Plugin TH Partner Panel"
-msgstr "Ein Widget für das Plugin TH Partner Panel"
+msgid "Widget for the Plugin TH Partner Slider"
+msgstr "Ein Widget für das Plugin TH Partner Slider"

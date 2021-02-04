@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: TH Partner Panel
+* Plugin Name: TH Partner Slider
 * Plugin URI: https://www.wiki.profoxi.de
 * Description: A simple our partner plugin. Create items and copy-paste the shortcode everywhere in your post or site.
 * Version: 1.0.0

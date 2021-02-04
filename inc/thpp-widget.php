@@ -31,7 +31,7 @@ class thppslidepanel_widget extends WP_Widget {
             __('TH Partner Slider', 'thpp'),
             // Widget description
             array(
-            'description' => __('Widget for the Plugin TH Partner Panel','thpp')
+            'description' => __('Widget for the Plugin TH Partner Slider','thpp')
         ));
     }
 
