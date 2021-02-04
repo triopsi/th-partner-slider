@@ -25,7 +25,7 @@ add_action('admin_init', 'thpp_add_partner', 1);
 function thpp_add_partner() {
 	add_meta_box( 
 		'thpp-partner-url', 
-		__('Patner details', 'thpp' ), 
+		__('Partner details', 'thpp' ), 
 		'thpp_add_partner_url_display',
 		'thpp', 
 		'normal'
@@ -136,9 +136,6 @@ function thpp_save_meta_box_data( $post_id ) {
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
-	}
-	if ( ! isset( $_POST['thpp_info_image'] ) ) {
-		return;
 	}
     
 	//Site Link

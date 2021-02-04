@@ -1,0 +1,136 @@
+# Copyright (C) 2021 triopsi
+# This file is distributed under the same license as the TH Partner Panel plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: TH Partner Panel 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/th-partner-panel\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-02-04T12:57:56+01:00\n"
+"PO-Revision-Date: 2021-02-04 13:03+0100\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Domain: thpp\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+
+#. Plugin Name of the plugin
+msgid "TH Partner Panel"
+msgstr "TH Partner Panel"
+
+#. Plugin URI of the plugin
+msgid "https://www.wiki.profoxi.de"
+msgstr "https://www.wiki.profoxi.de"
+
+#. Description of the plugin
+msgid "A simple our partner plugin. Create items and copy-paste the shortcode everywhere in your post or site."
+msgstr "Ein simpler WordPress Plugin zur Vorstellung der Partner. erstelle Items und füge den Shortcode in Seiten oder Posts."
+
+#. Author of the plugin
+msgid "triopsi"
+msgstr "triopsi"
+
+#. Author URI of the plugin
+msgid "http://wiki.profoxi.de"
+msgstr "http://wiki.profoxi.de"
+
+#: inc/thpp-post-metabox.php:28
+msgid "Partner details"
+msgstr "Partner details"
+
+#: inc/thpp-post-metabox.php:58
+msgid "More information URL"
+msgstr "Mehr Informationen URL"
+
+#: inc/thpp-post-metabox.php:61
+msgid "Site"
+msgstr "Seite"
+
+#: inc/thpp-post-metabox.php:67 inc/thpp-post-metabox.php:81
+msgid "Please Choose"
+msgstr "Bitte wählen"
+
+#: inc/thpp-post-metabox.php:75 inc/thpp-post-metabox.php:100
+msgid "or"
+msgstr "oder"
+
+#: inc/thpp-post-metabox.php:78
+msgid "Post"
+msgstr "Beitrag"
+
+#: inc/thpp-post-metabox.php:105
+msgid "e.g. https://example.com"
+msgstr "z.B. https://example.com"
+
+#: inc/thpp-post-metabox.php:107
+msgid "Empty Value = No Link"
+msgstr "Leerer Wert = Kein Link"
+
+#: inc/thpp-types.php:34 inc/thpp-types.php:36 inc/thpp-types.php:37
+msgid "TH Partner"
+msgstr "TH Partner"
+
+#: inc/thpp-types.php:35
+msgid "Partner"
+msgstr "Partner"
+
+#: inc/thpp-types.php:38 inc/thpp-types.php:39
+msgid "Add New Partner"
+msgstr "Partner neu hinzufügen"
+
+#: inc/thpp-types.php:40
+msgid "New Partner"
+msgstr "Neuer Partner"
+
+#: inc/thpp-types.php:41
+msgid "Edit Partner"
+msgstr "Partner bearbeiten"
+
+#: inc/thpp-types.php:42
+msgid "View Partner"
+msgstr "Partner anschauen"
+
+#: inc/thpp-types.php:43
+msgid "All Partners"
+msgstr "Alle Partner"
+
+#: inc/thpp-types.php:44
+msgid "Search Partner"
+msgstr "Suche Partner"
+
+#: inc/thpp-types.php:45
+msgid "No Partners found."
+msgstr "Keine Partner gefunden."
+
+#: inc/thpp-types.php:46
+msgid "No Partners found in Trash."
+msgstr "Keine Partner im Papierkorb gefunden."
+
+#: inc/thpp-types.php:85 inc/thpp-types.php:86
+msgid "Partner updated."
+msgstr "Partner upgedatet."
+
+#: inc/thpp-types.php:87
+msgid "Partner published."
+msgstr "Partner veröffentlicht."
+
+#: inc/thpp-types.php:88
+msgid "Partners saved."
+msgstr "Partner gespeichert."
+
+#: inc/thpp-types.php:89
+msgid "Partners draft updated."
+msgstr "Partnerskizze gespeichert."
+
+#: inc/thpp-types.php:127
+msgid "Partner name"
+msgstr "Partnernamen"
+
+#: inc/thpp-widget.php:31
+msgid "TH Partner Slider"
+msgstr "TH Partner Slider"
+
+#: inc/thpp-widget.php:34
+msgid "Widget for the Plugin TH Partner Panel"
+msgstr "Ein Widget für das Plugin TH Partner Panel"

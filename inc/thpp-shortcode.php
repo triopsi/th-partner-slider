@@ -31,7 +31,6 @@ function thpp_sh($atts) {
   // Shortcode Parameter
 	extract(shortcode_atts(array(
 		'link_target'		=> 'self',
-		'show_title'		=> 'true',
 		'orderby'			=> 'date',
     'order'				=> 'ASC',
     'partnername' => '',
@@ -39,7 +38,6 @@ function thpp_sh($atts) {
     ), $atts));
     
   $link_target 		  = ( $link_target == 'blank' ) 		? '_blank' 	: '_self';
-  $show_title 		  = ( $show_title == 'false') 	    ? false	: true;
   $order 				    = ( strtolower($order) == 'asc' ) 	? 'ASC' : 'DESC';
   $orderby 			    = !empty($orderby)	 				? $orderby 	: 'date';
   $partnername		  = !empty($partnername)              ? $partnername : '';
@@ -99,6 +97,10 @@ function thpp_sh($atts) {
  */
 function getOutputList( $thpp_query, $post ){
 
+  if (empty($link_target)){
+    $link_target = '_self';
+  }
+  
   $htmlout = '<!-- Start Triopsi Hosting Partner List -->';
 
   if( $thpp_query->have_posts() ) { 

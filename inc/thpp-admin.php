@@ -45,31 +45,14 @@ function add_admin_thpp_style_js() {
   /* Gets the post type. */
   global $post_type;
 
-  if( 'thpp' == $post_type ) {
-
-    //Remove Attachment/Media Button
-    remove_action('media_buttons', 'media_buttons');
-
-    /* CSS for metaboxes. */
-    wp_enqueue_style( 'thpp_admin_styles', plugins_url('../assets/css/editor-admin.css', __FILE__));
-
-    /* WP color picker Style and scripts */
-    wp_enqueue_style( 'wp-color-picker' );
+  if( 'thpp' == $post_type ) {  
 
     /* Add all JS, CSS and settings for the media js */
     wp_enqueue_media();
 
     /* JS for metaboxes */
     wp_enqueue_script( 'logic-form', plugins_url('../assets/js/logic-form.js', __FILE__));
-    wp_enqueue_script( 'images-picker', plugins_url('../assets/js/images-picker.js', __FILE__));
     
-  }else{
-    
-    /* CSS for metaboxes. */
-    wp_enqueue_style( 'thpp_admin_styles', plugins_url('../assets/css/editor-admin.css', __FILE__));   
-
-    /* Color JS */
-    wp_enqueue_script( 'thpp-admin-script-color', plugins_url('../assets/js/thpp-admin-script-color.js', __FILE__), array( 'jquery', 'wp-color-picker'  ) );
   }
 
 }

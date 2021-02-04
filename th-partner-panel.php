@@ -38,7 +38,6 @@ add_action( 'init', 'thpp_load_plugin_textdomain' );
 require_once('inc/thpp-admin.php');
 require_once('inc/thpp-types.php');
 require_once('inc/thpp-post-metabox.php');
-// require_once('inc/thpp-settings.php');
 
 /* Shortcode */
 require_once('inc/thpp-user.php');

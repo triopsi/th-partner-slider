@@ -124,7 +124,7 @@ function thpp_custom_columns( $column, $post_id ) {
  * @return void
  */
 function add_thpp_columns( $columns ) {
-	$columns['title'] = __('Service name','thpp');
+	$columns['title'] = __('Partner name','thpp');
 	unset( $columns['author'] );
 	unset( $columns['date'] );
 	return array_merge( $columns, array('thpp_shortcode' => 'Shortcode') );

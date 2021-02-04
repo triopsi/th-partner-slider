@@ -26,21 +26,9 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
  
 /* Delete plugin options */
 $option_version = 'thpp_plugin_version';
-$option_setting_main_color = 'thpp_setting_main_color';
-$option_setting_border_color_hover = 'thpp_setting_border_color_hover';
-$option_settings_cdn = 'thpp_settings_cdn_awesome';
 
 delete_option($option_version);
 delete_site_option($option_version);
-
-delete_option($option_setting_main_color);
-delete_site_option($option_setting_main_color);
-
-delete_option($option_setting_border_color_hover);
-delete_site_option($option_setting_border_color_hover);
-
-delete_option($option_settings_cdn);
-delete_site_option($option_settings_cdn);
 
 // Delete metadata and posts
 $post_type_arg = array('post_type' => 'thpp', 'posts_per_page' => -1);
