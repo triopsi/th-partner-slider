@@ -72,7 +72,7 @@ function thpp_add_partner_url_display( $post ){
 			));
 		?>
 		<br>
-		<small> - <?= __('or','thpp') ?> - </small>
+		<small> - <?php echo __('or','thpp') ?> - </small>
 		<br>
 		<div class="thpp_field_title">
 			<?php echo __('Post','thpp'); ?>
@@ -87,24 +87,24 @@ function thpp_add_partner_url_display( $post ){
 			foreach( $posts as $post ) : setup_postdata($post); 
 				if($partnerurlpostid == $post->ID){
 				?>
-					<option value="<?= $post->ID; ?>" selected><?php the_title(); ?></option>
+					<option value="<?php echo $post->ID; ?>" selected><?php the_title(); ?></option>
 				<?php
 				}else{ ?>
-				<option value="<?= $post->ID; ?>"><?php the_title(); ?></option>
+				<option value="<?php echo $post->ID; ?>"><?php the_title(); ?></option>
 			<?php 
 				}
 			endforeach; 
 			?>
 		</select>
 		<br>
-		<small> - <?= __('or','thpp') ?> - </small>
+		<small> - <?php echo __('or','thpp') ?> - </small>
 		<br>
 		<div class="thpp_field_title">
 			URL
 		</div>
 			<input class="thpp-field regular-text" id="infoLinkInputLink" name="thpp_info_url" type="text" value="<?php echo esc_url( $partnerurllink ) ?>" placeholder="<?php echo __('e.g. https://example.com','thpp'); ?>">
         </br>
-        <em><?= __('Empty Value = No Link','thpp') ?></em>
+        <em><?php echo __('Empty Value = No Link','thpp') ?></em>
     </div>
 
 <?php

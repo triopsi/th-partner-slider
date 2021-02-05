@@ -20,19 +20,18 @@
 **/
 
 /* Add CSS Class to the front */
-add_action( 'wp_enqueue_scripts', 'add_partner_front_css', 99 );
-function add_partner_front_css() {
+add_action( 'wp_enqueue_scripts', 'thpp_add_partner_front_css', 99 );
+function thpp_add_partner_front_css() {
   wp_enqueue_style( 'partner-slider-css', plugins_url('../assets/css/lightslider.css', __FILE__));
   wp_enqueue_style( 'partner', plugins_url('../assets/css/front-style.css', __FILE__));
 }
 
 // Add User Script
-add_action( 'wp_enqueue_scripts', 'add_thpartner_slider_js', 99 );
-function add_thpartner_slider_js() {
+add_action( 'wp_enqueue_scripts', 'thpp_add_thpartner_slider_js', 99 );
+function thpp_add_thpartner_slider_js() {
   wp_enqueue_script( 'lightslider-js', plugins_url('../assets/js/lightslider.min.js', __FILE__));
   wp_enqueue_script( 'thpp-js', plugins_url('../assets/js/content.js', __FILE__));
 }
-
 
 /**
  * Function to get post featured image

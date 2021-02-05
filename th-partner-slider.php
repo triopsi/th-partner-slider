@@ -52,5 +52,5 @@ require_once('inc/thpp-widget.php');
  * @return void
  */
 function thpp_load_plugin_textdomain() {
-  load_plugin_textdomain( 'thpp', FALSE, 'th-partner-panel/lang/' );
+  load_plugin_textdomain( 'thpp', '', 'th-partner-slider/lang/' );
 }

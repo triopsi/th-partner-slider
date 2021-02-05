@@ -1,11 +1,9 @@
 <?php
 /**
-* Plugin Name: TH Partner Slider
-* Description: Das passende Widget fuer die Startseite.
-* Version: 1.0
-* Plugin URI: https://wiki.profoxi.de
-* Author: Triopsi
-* Author URI: https://wiki.profoxi.de/
+* Author: triopsi
+* Author URI: http://wiki.profoxi.de
+* License: GPL3
+* License URI: https://www.gnu.org/licenses/gpl-3.0
 *
 * thpp is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -55,7 +53,7 @@ class thppslidepanel_widget extends WP_Widget {
         global $post;
 
         if( $thpp_query->have_posts() ) { 
-            $htmlout = getOutputList( $thpp_query, $post );
+            $htmlout = thpp_getOutputList( $thpp_query, $post );
           }
 
         echo $htmlout;

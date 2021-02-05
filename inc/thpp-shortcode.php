@@ -81,7 +81,7 @@ function thpp_sh($atts) {
   $border_color = get_option( 'thpp_setting_border_color_hover' , '#237dd1');
 
   if( $thpp_query->have_posts() ) { 
-    $htmlout .= getOutputList( $thpp_query, $post );
+    $htmlout .= thpp_getOutputList( $thpp_query, $post );
   }
 
   wp_reset_postdata(); // Reset WP Query
@@ -95,7 +95,7 @@ function thpp_sh($atts) {
  * @param [type] $thpp_query
  * @return void
  */
-function getOutputList( $thpp_query, $post ){
+function thpp_getOutputList( $thpp_query, $post ){
 
   if (empty($link_target)){
     $link_target = '_self';
