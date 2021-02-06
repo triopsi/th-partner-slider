@@ -36,7 +36,7 @@ function thpp_add_thpartner_slider_js() {
 /**
  * Function to get post featured image
  */
-function thpp_get_logo_image( $post_id = '', $size = 'thumbnail' ) {
+function thpp_get_logo_image( $post_id = '', $size = 'full' ) {
 	$imageurl = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $size );	
 	if( !empty($imageurl) ) {
 		$imageurl = isset($imageurl[0]) ? $imageurl[0] : '';
