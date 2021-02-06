@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/triopsi
 Tags: partner, ourpartner, panel, sidebar, site, post, shortcode, post, slideshow
 Requires at least: 5.3
 Tested up to: 5.6.1
-Requires PHP: 7.4
+Requires PHP: 5.4
 Stable tag: 1.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
