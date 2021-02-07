@@ -30,19 +30,50 @@ function thpp_sh($atts) {
 
   // Shortcode Parameter
 	extract(shortcode_atts(array(
-		'link_target'		=> 'self',
-		'orderby'			=> 'date',
-    'order'				=> 'ASC',
-    'partnername' => '',
-    'partnerID' => '',
+		'link_target'		        => 'self',
+		'orderby'			          => 'date',
+    'order'				          => 'ASC',
+    'partnername'           => '',
+    'partnerID'             => '',
+    'thpp_wg_items'         => 4,
+    'thpp_wg_loop'          => 'true',
+    'thpp_wg_slideMove'     => 2,
+    'thpp_wg_auto'          => 'true',
+    'thpp_wg_pauseOnHover'  => 'true',
+    'thpp_wg_speed'         => 600,
+    'thpp_wg_autoWidth'     => 'false',
+    'thpp_wg_controls'      => 'false',
+    'thpp_wg_pager'         => 'false',
     ), $atts));
     
-  $link_target 		  = ( $link_target == 'blank' ) 		? '_blank' 	: '_self';
-  $order 				    = ( strtolower($order) == 'asc' ) 	? 'ASC' : 'DESC';
-  $orderby 			    = !empty($orderby)	 				? $orderby 	: 'date';
-  $partnername		  = !empty($partnername)              ? $partnername : '';
-  $partnerID		       = !empty($partnerID)              ? $partnerID : '';
-        
+  $link_target 		        = ( $link_target == 'blank' ) 		? '_blank' 	: '_self';
+  $order 				          = ( strtolower($order) == 'asc' ) 	? 'ASC' : 'DESC';
+  $orderby 			          = !empty($orderby)	 				? $orderby 	: 'date';
+  $partnername		        = !empty($partnername)              ? $partnername : '';
+  $partnerID		          = !empty($partnerID)              ? $partnerID : '';
+  $thpp_wg_loop 		      = ( $thpp_wg_loop == 'false') 	    ? false	: true;
+  $thpp_wg_auto 		      = ( $thpp_wg_auto == 'false') 	    ? false	: true;
+  $thpp_wg_pauseOnHover 	= ( $thpp_wg_pauseOnHover == 'false') 	    ? false	: true;
+  $thpp_wg_autoWidth 		  = ( $thpp_wg_autoWidth == 'false') 	    ? false	: true;
+  $thpp_wg_controls 		  = ( $thpp_wg_controls == 'false') 	    ? false	: true;
+  $thpp_wg_pager 		      = ( $thpp_wg_pager == 'false') 	    ? false	: true;
+  $thpp_wg_items 			    = !empty($thpp_wg_items)	 				? $thpp_wg_items 	: '4';
+  $thpp_wg_slideMove 			= !empty($thpp_wg_slideMove)	 				? $thpp_wg_slideMove 	: '2';
+  $thpp_wg_speed 			    = !empty($thpp_wg_speed)	 				? $thpp_wg_speed 	: '600';
+      
+  //Script Config
+  $configscript = array( 
+    'thpp_wg_items'         => $thpp_wg_items,
+    'thpp_wg_loop'          => $thpp_wg_loop,
+    'thpp_wg_slideMove'     => $thpp_wg_slideMove,
+    'thpp_wg_auto'          => $thpp_wg_auto,
+    'thpp_wg_pauseOnHover'  => $thpp_wg_pauseOnHover,
+    'thpp_wg_speed'         => $thpp_wg_speed,
+    'thpp_wg_autoWidth'     => $thpp_wg_autoWidth,
+    'thpp_wg_controls'      => $thpp_wg_controls,
+    'thpp_wg_pager'         => $thpp_wg_pager,
+  );
+
   // WP Query Parameters
   $query_args = array(
     'post_type' 			  => 'thpp',
@@ -81,11 +112,15 @@ function thpp_sh($atts) {
   $border_color = get_option( 'thpp_setting_border_color_hover' , '#237dd1');
 
   if( $thpp_query->have_posts() ) { 
-    $htmlout .= thpp_getOutputList( $thpp_query, $post );
+    $idwid=uniqid();
+    ob_start();
+    thpp_print_scripts( $configscript, $idwid );
+    $o = ob_get_clean();
+    $htmlout .= thpp_getOutputList( $thpp_query, $post, $idwid );
   }
 
   wp_reset_postdata(); // Reset WP Query
-  return $htmlout;
+  return $o.$htmlout;
 
 }
 
@@ -95,7 +130,7 @@ function thpp_sh($atts) {
  * @param [type] $thpp_query
  * @return void
  */
-function thpp_getOutputList( $thpp_query, $post ){
+function thpp_getOutputList( $thpp_query, $post, $id ){
 
   if (empty($link_target)){
     $link_target = '_self';
@@ -108,7 +143,7 @@ function thpp_getOutputList( $thpp_query, $post ){
     //itteration
     $i=0;
 
-    $htmlout .='<ul class="thpp-panel cs-hidden">';
+    $htmlout .='<ul id="'.$id.'" class="thpp-panel cs-hidden">';
 
     //Outputt all Services
     foreach ($thpp_query->get_posts() as $partner):
@@ -165,4 +200,53 @@ function thpp_getOutputList( $thpp_query, $post ){
   }
   $htmlout .= '<!-- End Triopsi Hosting Partner List -->';
   return $htmlout; 
+}
+
+
+/**
+* Print script.
+*
+* @since 1.0
+*/
+function thpp_print_scripts( $config, $id ) {
+?>
+<script>
+			;(function($){
+        $(document).ready(function (){ 
+          $("#<?php echo esc_attr( $id ) ?>").lightSlider({
+            item: <?php echo esc_attr((int)$config['thpp_wg_items']) ?>,
+            loop: <?php echo ( esc_attr( $config['thpp_wg_loop'] ) )?'true':'false'; ?>,
+            slideMove: <?php echo esc_attr((int)$config['thpp_wg_slideMove']) ?>,
+            auto: <?php echo ( esc_attr($config['thpp_wg_auto']) )?'true':'false'; ?>,
+            pauseOnHover: <?php echo ( esc_attr($config['thpp_wg_pauseOnHover']) )?'true':'false'; ?>,
+            easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+            speed: <?php echo esc_attr((int)$config['thpp_wg_speed']) ?>,
+            autoWidth: <?php echo ( esc_attr($config['thpp_wg_autoWidth']) )?'true':'false'; ?>,
+            controls: <?php echo ( esc_attr($config['thpp_wg_controls']) )?'true':'false'; ?>,
+            pager: <?php echo ( esc_attr($config['thpp_wg_pager']) )?'true':'false'; ?>,
+            onSliderLoad: function() {
+                $('#autoWidth').removeClass('cS-hidden');
+            },
+            responsive : [
+                {
+                  breakpoint:800,
+                  settings: {
+                    item:3,
+                    slideMove:1,
+                    slideMargin:6,
+                  }
+                },
+                {
+                    breakpoint:480,
+                    settings: {
+                      item:2,
+                      slideMove:1
+                    }
+                }
+            ]
+          });  
+        });
+    })(jQuery);
+    </script>
+<?php
 }

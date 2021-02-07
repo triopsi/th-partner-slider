@@ -30,7 +30,6 @@ function thpp_add_partner_front_css() {
 add_action( 'wp_enqueue_scripts', 'thpp_add_thpartner_slider_js', 99 );
 function thpp_add_thpartner_slider_js() {
   wp_enqueue_script( 'lightslider-js', plugins_url('../assets/js/lightslider.min.js', __FILE__));
-  wp_enqueue_script( 'thpp-js', plugins_url('../assets/js/content.js', __FILE__));
 }
 
 /**
