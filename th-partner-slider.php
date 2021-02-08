@@ -3,7 +3,7 @@
 * Plugin Name: TH Partner Slider
 * Plugin URI: https://www.wiki.profoxi.de
 * Description: A simple our partner plugin. Create items and copy-paste the shortcode everywhere in your post or site.
-* Version: 1.1.0
+* Version: 1.2.0
 * Author: triopsi
 * Author URI: http://wiki.profoxi.de
 * Text Domain: thpp
@@ -27,7 +27,7 @@
 
 //Definie plugin version
 if (!defined('THPP_VERSION'))
-    define('THPP_VERSION', '1.1.0');
+    define('THPP_VERSION', '1.2.0');
 
 
 /* General */
@@ -38,6 +38,8 @@ add_action( 'init', 'thpp_load_plugin_textdomain' );
 require_once('inc/thpp-admin.php');
 require_once('inc/thpp-types.php');
 require_once('inc/thpp-post-metabox.php');
+require_once('inc/thpp-help.php');
+require_once('inc/thpp-setting.php');
 
 /* Shortcode */
 require_once('inc/thpp-user.php');

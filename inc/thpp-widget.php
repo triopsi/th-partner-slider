@@ -36,10 +36,12 @@ class thppslidepanel_widget extends WP_Widget {
     // Creating widget front-end
     public function widget($args, $instance){
 
+        //extract the args
         extract( $args );
 
-        //Defaults
+        //Defaults options
         $defaults = array( 
+            'thpp_link_target' => '_self',
             'thpp_wg_items' => 4,
             'thpp_wg_loop' => true,
             'thpp_wg_slideMove' => 2,
@@ -51,12 +53,23 @@ class thppslidepanel_widget extends WP_Widget {
             'thpp_wg_pager' => false,
         );
 
+        //merge the options with default options
         $instance = wp_parse_args( ( array ) $instance, $defaults );
 
+        //check the target link
+        if($instance['thpp_link_target']){
+            $instance['thpp_link_target'] = '_blank';
+        }else{
+            $instance['thpp_link_target'] = '_self';
+        }
+
+        //print scripts
         thpp_print_scripts( $instance, "thpp_".$widget_id );
 
+        //print before scripte and text
         echo $before_widget;
 
+        //set the query
         $query_args = array(
             'post_type' 			=> 'thpp',
             'post_status' 			=> array( 'publish' ),
@@ -69,12 +82,15 @@ class thppslidepanel_widget extends WP_Widget {
         $thpp_query = new WP_Query($query_args);
         $post_count = $thpp_query->post_count;
 
+        //gloabl post
         global $post;
 
+        //check slideshow and print the output
         if( $thpp_query->have_posts() ) { 
-            echo thpp_getOutputList( $thpp_query, $post, "thpp_".$widget_id );
+            echo thpp_getOutputList( $thpp_query, $post, "thpp_".$widget_id, $instance['thpp_link_target'] );
         }
 
+        //print after widget scripts and text
         echo $after_widget;
     }
 
@@ -83,6 +99,7 @@ class thppslidepanel_widget extends WP_Widget {
 
         //Defaults
         $defaults = array( 
+            'thpp_link_target' => false,
             'thpp_wg_items' => 4,
             'thpp_wg_loop' => true,
             'thpp_wg_slideMove' => 2,
@@ -99,11 +116,11 @@ class thppslidepanel_widget extends WP_Widget {
         ?>
         <div style="margin-bottom:10px;">
             <p>
-                <label for="<?php echo esc_attr($this->get_field_id('thpp_wg_items')); ?>"><?php _e('Item size', 'thpp'); ?></label> <a href="#" title="<?php _e('Number of slides to show at a time', 'thpp'); ?>">[?]</a>
+                <label for="<?php echo esc_attr($this->get_field_id('thpp_wg_items')); ?>"><?php _e('Item size', 'thpp'); ?></label> <a href="#" title="<?php _e('Number of partner to show at a time', 'thpp'); ?>">[?]</a>
                 <input class="widefat" step="1" step="1" min="1" max="" id="<?php echo esc_attr($this->get_field_id('thpp_wg_items')); ?>" name="<?php echo esc_attr($this->get_field_name('thpp_wg_items')); ?>" type="number" value="<?php echo esc_attr( $instance[ 'thpp_wg_items' ] ); ?>" />
             </p> 
             <p>
-                <label for="<?php echo esc_attr($this->get_field_id('thpp_wg_slideMove')); ?>"><?php _e('Slide move', 'thpp'); ?></label> <a href="#" title="<?php _e('Number of slides to be moved at a time', 'thpp'); ?>">[?]</a>
+                <label for="<?php echo esc_attr($this->get_field_id('thpp_wg_slideMove')); ?>"><?php _e('Slide move', 'thpp'); ?></label> <a href="#" title="<?php _e('Number of partner to be moved at a time', 'thpp'); ?>">[?]</a>
                 <input class="widefat" step="1" step="1" min="1" max="" id="<?php echo esc_attr($this->get_field_id('thpp_wg_slideMove')); ?>" name="<?php echo $this->get_field_name('thpp_wg_slideMove'); ?>" type="number" value="<?php echo esc_attr( $instance[ 'thpp_wg_slideMove' ] ); ?>" />
             </p>
             <p>
@@ -133,6 +150,10 @@ class thppslidepanel_widget extends WP_Widget {
             <p>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('thpp_wg_loop')); ?>" name="<?php echo esc_attr($this->get_field_name('thpp_wg_loop')); ?>" type="checkbox" <?php checked( $instance[ 'thpp_wg_loop' ] ); ?> />
                 <label for="<?php echo esc_attr($this->get_field_id('thpp_wg_loop')); ?>"><?php _e('Loop', 'thpp'); ?></label> <a href="#" title="<?php _e('If false, will disable the ability to loop back to the beginning of the slide when on the last element.', 'thpp'); ?>">[?]</a>
+            </p>   
+            <p>
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('thpp_link_target')); ?>" name="<?php echo esc_attr($this->get_field_name('thpp_link_target')); ?>" type="checkbox" <?php checked( $instance[ 'thpp_link_target' ] ); ?> />
+                <label for="<?php echo esc_attr($this->get_field_id('thpp_link_target')); ?>"><?php _e('Link target open in new tab', 'thpp'); ?></label> <a href="#" title="<?php _e('If true, link will open in a new tab or window.', 'thpp'); ?>">[?]</a>
             </p>    
         </div>
         <?php
@@ -150,6 +171,7 @@ class thppslidepanel_widget extends WP_Widget {
         $instance['thpp_wg_autoWidth'] = (!empty($new_instance['thpp_wg_autoWidth'])) ? true : false;
         $instance['thpp_wg_controls'] = (!empty($new_instance['thpp_wg_controls'])) ? true : false;
         $instance['thpp_wg_pager'] = (!empty($new_instance['thpp_wg_pager'])) ? true : false;
+        $instance['thpp_link_target'] = (!empty($new_instance['thpp_link_target'])) ? true : false;
         return $instance;
     }
 

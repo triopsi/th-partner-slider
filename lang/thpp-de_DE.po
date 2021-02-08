@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2021-02-04T12:57:56+01:00\n"
-"PO-Revision-Date: 2021-02-04 13:15+0100\n"
+"PO-Revision-Date: 2021-02-08 09:49+0100\n"
 "X-Generator: Poedit 2.3.1\n"
 "X-Domain: thpp\n"
 "Last-Translator: \n"
@@ -51,7 +51,8 @@ msgstr "Seite"
 msgid "Please Choose"
 msgstr "Bitte wählen"
 
-#: inc/thpp-post-metabox.php:75 inc/thpp-post-metabox.php:100
+#: inc/thpp-help.php:69 inc/thpp-post-metabox.php:75
+#: inc/thpp-post-metabox.php:100
 msgid "or"
 msgstr "oder"
 
@@ -130,3 +131,227 @@ msgstr "Partnernamen"
 #: inc/thpp-widget.php:34
 msgid "Widget for the Plugin TH Partner Slider"
 msgstr "Ein Widget für das Plugin TH Partner Slider"
+
+#: inc/thpp-widget.php:119
+msgid "Item size"
+msgstr "Itemlänge"
+
+#: inc/thpp-widget.php:119
+msgid "Number of partner to show at a time"
+msgstr "Anzahl der Partner, die gleichzeitig angezeigt werden sollen"
+
+#: inc/thpp-widget.php:123
+msgid "Slide move"
+msgstr "Slidebewegung"
+
+#: inc/thpp-widget.php:123
+msgid "Number of partner to be moved at a time"
+msgstr "Anzahl der gleichzeitig zu verschiebenden Partner"
+
+#: inc/thpp-widget.php:127
+msgid "Speed"
+msgstr "Geschwindigkeit"
+
+#: inc/thpp-widget.php:127
+msgid "Transition duration (in ms). // ex = speed:400;"
+msgstr "Übergangszeit (in ms). // Bsp. = Speed:400;"
+
+#: inc/thpp-widget.php:132
+msgid "Auto start"
+msgstr "Autostart"
+
+#: inc/thpp-widget.php:132
+msgid "If true, the Slider will automatically start to play."
+msgstr "Wenn true, wird der Slider automatisch abgespielt."
+
+#: inc/thpp-widget.php:136
+msgid "Pause on hover"
+msgstr "Pause beim herüberfahren"
+
+#: inc/thpp-widget.php:136
+msgid "Pause autoplay on hover."
+msgstr "Stoppt Slideshow bei herüberfahren der Maus."
+
+#: inc/thpp-widget.php:140
+msgid "Auto width"
+msgstr "Autobreite"
+
+#: inc/thpp-widget.php:140
+msgid "Custom width for each slide"
+msgstr "Benutzerdefinierte Breite für jede Slider"
+
+#: inc/thpp-widget.php:144
+msgid "Show controls"
+msgstr "Kontrollwerkzeuge anzeigen"
+
+#: inc/thpp-widget.php:144
+msgid "If false, prev/next buttons will not be displayed."
+msgstr "Bei false werden die Schaltflächen prev / next nicht angezeigt."
+
+#: inc/thpp-widget.php:148
+msgid "Show pager controls"
+msgstr "Seitenoption"
+
+#: inc/thpp-widget.php:148
+msgid "Enable pager option"
+msgstr "Aktiviere Seitenoptionen"
+
+#: inc/thpp-widget.php:152
+msgid "Loop"
+msgstr "Schleife"
+
+#: inc/thpp-widget.php:152
+msgid "If false, will disable the ability to loop back to the beginning of the slide when on the last element."
+msgstr "Wenn false, wird die Möglichkeit deaktiviert, beim letzten Element zum Anfang des Sliders zurückzukehren."
+
+#: inc/thpp-widget.php:156
+msgid "Link target open in new tab"
+msgstr "Linkziel in neuen Tab öffnen"
+
+#: inc/thpp-widget.php:156
+msgid "If true, link will open in a new tab or window."
+msgstr "Wenn true, wird der Link in einem neuen Tab oder Fenster geöffnet."
+
+#: inc/thpp-help.php:30
+msgid "How It Works"
+msgstr "Wie funktioniert es"
+
+#: inc/thpp-help.php:31
+msgid "Help"
+msgstr "Hilfe"
+
+#: inc/thpp-help.php:54
+msgid "How It Works - Display and shortcode"
+msgstr "Wie es funktioniert - Alle Shortcodes im Überblick"
+
+#: inc/thpp-help.php:62
+msgid "Geeting Started with TH partner Slider"
+msgstr "Erste Schritte mit TH Partner Slider"
+
+#: inc/thpp-help.php:66
+msgid "Step 1. Go to \"All Partners --> Add New Partner\""
+msgstr "Schritt 1. Gehe auf \"Alle Partner --> Partner neu hinzufügen\""
+
+#: inc/thpp-help.php:67
+msgid "Step 2. Add Partner title, a partner image or logo under the featured image section and insert optimal a partner link."
+msgstr "Schritt 2. Füge ein Partner Titel, ein Partner Logo oder Bild als Beitragsbild ein und füge ggf. noch ein Partnerlink hinzu."
+
+#: inc/thpp-help.php:68
+msgid "Step 3a. Copy-paste the shortcode <span class=\"thpp-shortcode-preview\">[thpp]</span> anywhere in your post or site for show a slideshow"
+msgstr "Schritt 3a. Kopiere und Füge den Shortcode <span class=\"thpp-shortcode-preview\">[thpp]</span> überall in deinen Post oder Seiten ein, um eine Slideshow zu generieren"
+
+#: inc/thpp-help.php:70
+msgid "Step 3b. Copy-paste the shortcode <span class=\"thpp-shortcode-preview\">[thpp partnerid=\"&lt;id&gt;\"]</span> anywhere in your post or site for show a single partner"
+msgstr "Schritt 3a. Kopiere und Füge den Shortcode <span class=\"thpp-shortcode-preview\">[thpp partnerid=\"&lt;id&gt;\"]</span> überall in deinen Post oder Seiten ein, um ein einzelnen Partner anzuzeigen"
+
+#: inc/thpp-help.php:77
+msgid "All Shortcodes"
+msgstr "Alle Shortcodes"
+
+#: inc/thpp-help.php:80
+msgid "Partner Slide Shortcode. Show all partner in a slideshow"
+msgstr "Partner Slide Shortcode. Zeige alle Partner in einer Slideshow"
+
+#: inc/thpp-help.php:81
+msgid "show a single partner"
+msgstr "Zeige einen einzelnen Partner an"
+
+#: inc/thpp-help.php:87
+msgid "All Shortcodes parameters"
+msgstr "Alle Shortcodes Parameter"
+
+#: inc/thpp-help.php:90
+msgid "Partner link target. Value=self or blank, Default=self"
+msgstr "Partner Linkziel. Value=self oder blank. Standard=self"
+
+#: inc/thpp-help.php:91
+msgid "orderby the atribute of partners Value=date, ID, title, name or rand, Default=date"
+msgstr "Sortiere nach dem Attribut des Partner Werts = date, ID, title, name oder rand, Standard = date"
+
+#: inc/thpp-help.php:92
+msgid "sort the partner in ascending or descending order. Value=asc or desc, Default=ASC"
+msgstr "Sortieren Sie den Partner in aufsteigender oder absteigender Reihenfolge. Wert = asc oder desc, Standard = ASC"
+
+#: inc/thpp-help.php:93 inc/thpp-help.php:94
+msgid "Show a partner - single view"
+msgstr "Zeige einen Partner - Einzelansicht"
+
+#: inc/thpp-help.php:95
+msgid "Number of partner to show at a time. Default=4"
+msgstr "Anzahl der Partner, die gleichzeitig angezeigt werden sollen. Default = 4"
+
+#: inc/thpp-help.php:96
+msgid "If false, will disable the ability to loop back to the beginning of the slide when on the last element. Default=4"
+msgstr ""
+
+#: inc/thpp-help.php:97
+msgid "Number of partner to be moved at a time. Default=2"
+msgstr "Anzahl der gleichzeitig zu verschiebenden Partner"
+
+#: inc/thpp-help.php:98
+msgid "If true, the Slider will automatically start to play. Default=true"
+msgstr "Wenn true, wird der Slider automatisch abgespielt. Standard=true"
+
+#: inc/thpp-help.php:99
+msgid "Pause autoplay on hover. Default=true"
+msgstr "Stoppt Slideshow bei herüberfahren der Maus. Standard=true"
+
+#: inc/thpp-help.php:100
+msgid "Transition duration (in ms). // ex = speed:400. Default=600"
+msgstr "Übergangszeit (in ms). // Bsp. = Speed:400; Standard=600"
+
+#: inc/thpp-help.php:101
+msgid "Custom width for each slide. Default=false"
+msgstr "Benutzerdefinierte Breite für jede Slider. Standard=false"
+
+#: inc/thpp-help.php:102
+msgid "If false, prev/next buttons will not be displayed. Default=false"
+msgstr "Bei false werden die Schaltflächen prev / next nicht angezeigt. Standard=false"
+
+#: inc/thpp-help.php:103
+msgid "Enable pager option. Default=false"
+msgstr "Aktiviere Seitenoptionen. Standard=false"
+
+#: inc/thpp-help.php:105
+msgid "e.g."
+msgstr "z.B."
+
+#: inc/thpp-help.php:112
+msgid "Widget"
+msgstr "Widget"
+
+#: inc/thpp-help.php:115
+msgid "Use the widget to insert a slideshow in your page or post."
+msgstr "Verwenden Sie das Widget, um eine Slideshow in Ihre Seite oder Ihren Beitrag einzufügen."
+
+#: inc/thpp-help.php:123
+msgid "Need Support?"
+msgstr "Brauchst du Support?"
+
+#: inc/thpp-help.php:126
+msgid "Check plugin document for shortcode parameters."
+msgstr "Checke die Plugin Dokumentationsseite für Shortcodes Parameter."
+
+#: inc/thpp-help.php:127
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: inc/thpp-help.php:128
+msgid "Donate"
+msgstr "Spende"
+
+#: inc/thpp-help.php:134
+msgid "Used libraries"
+msgstr "Benutzte Bibliotheken"
+
+#: inc/thpp-settings.php:28 inc/thpp-settings.php:29
+msgid "TH Partner Options"
+msgstr "TH Partner Einstellungen"
+
+#: inc/thpp-settings.php:67
+msgid "Debug information"
+msgstr "Debug Informationen"
+
+#: inc/thpp-settings.php:68
+msgid "You are seeing this because your WP_DEBUG variable is set to true."
+msgstr "Du siehst folgende variablen, weil du die Variable WP_DEBUG in deiner Konfig auf true gesetzet hast."

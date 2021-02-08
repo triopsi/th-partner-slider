@@ -34,14 +34,14 @@ function thpp_sh($atts) {
 		'orderby'			          => 'date',
     'order'				          => 'ASC',
     'partnername'           => '',
-    'partnerID'             => '',
+    'partnerid'             => '',
     'thpp_wg_items'         => 4,
     'thpp_wg_loop'          => 'true',
-    'thpp_wg_slideMove'     => 2,
+    'thpp_wg_slidemove'     => 2,
     'thpp_wg_auto'          => 'true',
-    'thpp_wg_pauseOnHover'  => 'true',
+    'thpp_wg_pauseonhover'  => 'true',
     'thpp_wg_speed'         => 600,
-    'thpp_wg_autoWidth'     => 'false',
+    'thpp_wg_autowidth'     => 'false',
     'thpp_wg_controls'      => 'false',
     'thpp_wg_pager'         => 'false',
     ), $atts));
@@ -50,26 +50,28 @@ function thpp_sh($atts) {
   $order 				          = ( strtolower($order) == 'asc' ) 	? 'ASC' : 'DESC';
   $orderby 			          = !empty($orderby)	 				? $orderby 	: 'date';
   $partnername		        = !empty($partnername)              ? $partnername : '';
-  $partnerID		          = !empty($partnerID)              ? $partnerID : '';
+  $partnerid		          = !empty($partnerid)              ? $partnerid : '';
   $thpp_wg_loop 		      = ( $thpp_wg_loop == 'false') 	    ? false	: true;
   $thpp_wg_auto 		      = ( $thpp_wg_auto == 'false') 	    ? false	: true;
-  $thpp_wg_pauseOnHover 	= ( $thpp_wg_pauseOnHover == 'false') 	    ? false	: true;
-  $thpp_wg_autoWidth 		  = ( $thpp_wg_autoWidth == 'false') 	    ? false	: true;
+  $thpp_wg_pauseonhover 	= ( $thpp_wg_pauseonhover == 'false') 	    ? false	: true;
+  $thpp_wg_autowidth 		  = ( $thpp_wg_autowidth == 'false') 	    ? false	: true;
   $thpp_wg_controls 		  = ( $thpp_wg_controls == 'false') 	    ? false	: true;
   $thpp_wg_pager 		      = ( $thpp_wg_pager == 'false') 	    ? false	: true;
   $thpp_wg_items 			    = !empty($thpp_wg_items)	 				? $thpp_wg_items 	: '4';
-  $thpp_wg_slideMove 			= !empty($thpp_wg_slideMove)	 				? $thpp_wg_slideMove 	: '2';
+  $thpp_wg_slidemove 			= !empty($thpp_wg_slidemove)	 				? $thpp_wg_slidemove 	: '2';
   $thpp_wg_speed 			    = !empty($thpp_wg_speed)	 				? $thpp_wg_speed 	: '600';
       
+  // var_dump($partnerID);
+
   //Script Config
   $configscript = array( 
     'thpp_wg_items'         => $thpp_wg_items,
     'thpp_wg_loop'          => $thpp_wg_loop,
-    'thpp_wg_slideMove'     => $thpp_wg_slideMove,
+    'thpp_wg_slideMove'     => $thpp_wg_slidemove,
     'thpp_wg_auto'          => $thpp_wg_auto,
-    'thpp_wg_pauseOnHover'  => $thpp_wg_pauseOnHover,
+    'thpp_wg_pauseOnHover'  => $thpp_wg_pauseonhover,
     'thpp_wg_speed'         => $thpp_wg_speed,
-    'thpp_wg_autoWidth'     => $thpp_wg_autoWidth,
+    'thpp_wg_autoWidth'     => $thpp_wg_autowidth,
     'thpp_wg_controls'      => $thpp_wg_controls,
     'thpp_wg_pager'         => $thpp_wg_pager,
   );
@@ -84,25 +86,18 @@ function thpp_sh($atts) {
   );
 
   //search single partner
-  if(!empty($partnerID)){
-    $query_args['p'] = $partnerID;
+  if(!empty($partnerid)){
+    $query_args['p'] = $partnerid;
   }
 
   if(!empty($partnername)){
     $query_args['name'] = $partnername;
   }
 
+  // var_dump($query_args);
+
   // WP Query Parameters
 	$thpp_query = new WP_Query($query_args);
-  $post_count = $thpp_query->post_count;
-
-  $single_partner=false;
-  if( $post_count == 1 ){
-    $single_partner=true;
-  }
-  
-  //Output
-  $htmlout = '';
 
   // Gets table slug (post name)
   $all_attr = shortcode_atts( array( "name" => '' ), $atts );
@@ -111,12 +106,15 @@ function thpp_sh($atts) {
   $main_color = get_option( 'thpp_setting_main_color' , '#237dd1');
   $border_color = get_option( 'thpp_setting_border_color_hover' , '#237dd1');
 
+  //Default Output
+  $htmlout = '';
+
   if( $thpp_query->have_posts() ) { 
     $idwid=uniqid();
     ob_start();
     thpp_print_scripts( $configscript, $idwid );
     $o = ob_get_clean();
-    $htmlout .= thpp_getOutputList( $thpp_query, $post, $idwid );
+    $htmlout .= thpp_getOutputList( $thpp_query, $post, $idwid, $link_target );
   }
 
   wp_reset_postdata(); // Reset WP Query
@@ -130,11 +128,7 @@ function thpp_sh($atts) {
  * @param [type] $thpp_query
  * @return void
  */
-function thpp_getOutputList( $thpp_query, $post, $id ){
-
-  if (empty($link_target)){
-    $link_target = '_self';
-  }
+function thpp_getOutputList( $thpp_query, $post, $id, $link_target='_self' ){
   
   $htmlout = '<!-- Start Triopsi Hosting Partner List -->';
 

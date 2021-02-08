@@ -5,7 +5,7 @@ Tags: partner, ourpartner, panel, sidebar, site, post, shortcode, post, slidesho
 Requires at least: 5.3
 Tested up to: 5.6.1
 Requires PHP: 5.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0
  
@@ -51,8 +51,14 @@ Nothing yet.
 2. edit Partner
 3. List of all partners
 4. Slideshow with controls
+5. Widget
  
 == Changelog ==
+
+= 1.2.0 =
+* add help page
+* add settings page
+* target link fix
 
 = 1.1.0 =
 * add more config controls on widgets page

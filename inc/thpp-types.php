@@ -106,7 +106,7 @@ function thpp_custom_columns( $column, $post_id ) {
 		global $post;
 		$slug = '' ;
 		$slug = $post->ID;
-		$shortcode = '<span class="shortcode"><input type="text" onfocus="this.select();" readonly="readonly" value="[thpp partnerID=&quot;'.$slug.'&quot;]" class="large-text code"></span>';
+		$shortcode = '<span class="shortcode"><input type="text" onfocus="this.select();" readonly="readonly" value="[thpp partnerid=&quot;'.$slug.'&quot;]" class="large-text code"></span>';
 		echo $shortcode;
 		break;
 	}
